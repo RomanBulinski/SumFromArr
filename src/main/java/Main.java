@@ -20,8 +20,15 @@ public class Main {
 
         for ( Integer n :  arrMap.keySet() ){
             int temp = num - n;
-            if( arrMap.containsKey(temp) && arrMap.get(temp) > 1 ){
-                return true;
+
+            if(n==num){
+                if( arrMap.containsKey(temp) && arrMap.get(temp) > 1 ){
+                    return true;
+                }
+            }else{
+                if( arrMap.containsKey(temp) ){
+                    return true;
+                }
             }
         }
         return false;
