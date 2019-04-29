@@ -20,7 +20,7 @@ public class Main {
 
         for ( Integer n :  arrMap.keySet() ){
             int temp = num - n;
-            if( arrMap.containsKey(temp) ){
+            if( arrMap.containsKey(temp) && arrMap.get(temp) > 1 ){
                 return true;
             }
         }
