@@ -3,20 +3,22 @@ import java.util.Map;
 
 public class Main {
 
-    public static  boolean isSumInArr( int[] arr, int num ){
+    public static  boolean isSumInArr( int[] arr, int inputSum ){
 
         Map< Integer, Integer > arrMap = new HashMap<>();
 
         createMap(arr, arrMap);
 
-        for ( Integer n :  arrMap.keySet() ){
-            int temp = num - n;
-            if( n==num  && arrMap.get(n) > 1  ){
-                    return true;
-            }else{
-                if( arrMap.containsKey(temp) ){
-                    return true;
-                }
+        for ( Integer key :  arrMap.keySet() ){
+            int temp = inputSum - key;
+            if( inputSum == key  ){
+                    return false;
+            }
+            if( inputSum == key*2 && arrMap.get(key) ==1 ){
+                return false;
+            }
+            if( arrMap.containsKey(temp) ){
+                return true;
             }
         }
         return false;

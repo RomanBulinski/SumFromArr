@@ -31,7 +31,7 @@ public class TestMainClass {
 
     @Test
     public void test5() {
-        int[] arr = {10,1,2,3};
+        int[] arr = {10,1,2,3,4};
         assertFalse(Main.isSumInArr( arr,20));
     }
 
@@ -41,6 +41,11 @@ public class TestMainClass {
         assertFalse(Main.isSumInArr( arr,0));
     }
 
+    @Test
+    public void test7() {
+        int[] arr = {10,1,2,3};
+        assertFalse(Main.isSumInArr( arr,50));
+    }
 
 }
 
