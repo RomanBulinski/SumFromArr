@@ -7,6 +7,22 @@ public class Main {
 
         Map< Integer, Integer > arrMap = new HashMap<>();
 
+        createMap(arr, arrMap);
+
+        for ( Integer n :  arrMap.keySet() ){
+            int temp = num - n;
+            if( n==num  && arrMap.get(n) > 1  ){
+                    return true;
+            }else{
+                if( arrMap.containsKey(temp) ){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private static void createMap(int[] arr, Map<Integer, Integer> arrMap) {
         for( int number : arr){
             int counter;
             if( arrMap.containsKey( number ) ){
@@ -17,21 +33,6 @@ public class Main {
                 arrMap.put( number, 1 );
             }
         }
-
-        for ( Integer n :  arrMap.keySet() ){
-            int temp = num - n;
-
-            if(n==num){
-                if( arrMap.containsKey(temp) && arrMap.get(temp) > 1 ){
-                    return true;
-                }
-            }else{
-                if( arrMap.containsKey(temp) ){
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
 }

@@ -35,5 +35,12 @@ public class TestMainClass {
         assertFalse(Main.isSumInArr( arr,20));
     }
 
+    @Test
+    public void test6() {
+        int[] arr = {10,1,2,3};
+        assertFalse(Main.isSumInArr( arr,0));
+    }
+
+
 }
 
